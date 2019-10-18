@@ -14,7 +14,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun butNumberEvent(view: View) {
-
+        if(isNewOp == true){
+            etShowValue.setText("")
+        }
+        isNewOp = false
         val butSelect = view as Button
         var butClickValue: String = etShowValue.text.toString()
         when (butSelect.id) {
@@ -55,7 +58,55 @@ class MainActivity : AppCompatActivity() {
                 butClickValue = "-$butClickValue"
             }
         }
-        
+
         etShowValue.setText(butClickValue)
     }
+
+    var op = "*"
+    var oldNumber = ""
+    var isNewOp = true
+
+    fun buOpEvent(view: View){
+
+        val butSelect = view as Button
+        var butClickValue:String=etShowValue.text.toString()
+        when(butSelect.id){
+            butMultiply.id -> {
+                op = "*"
+            }
+            butDivide.id ->{
+                op = "/"
+            }
+            butPlus.id -> {
+                op = "+"
+            }
+            butMinus.id -> {
+                op = "-"
+            }
+        }
+        oldNumber = etShowValue.text.toString()
+        isNewOp = true
+    }
+
+    fun butEqualEvent(view: View){
+        val newNumber = etShowValue.text.toString()
+        var finalNumber: Double?= null
+        when(op){
+            "*"->{
+                finalNumber = oldNumber.toDouble() * newNumber.toDouble()
+            }
+            "/"->{
+                finalNumber = oldNumber.toDouble() / newNumber.toDouble()
+            }
+            "-"->{
+                finalNumber = oldNumber.toDouble() - newNumber.toDouble()
+            }
+            "+"->{
+                finalNumber = oldNumber.toDouble() + newNumber.toDouble()
+            }
+        }
+        etShowValue.setText(finalNumber.toString())
+        isNewOp = true
+    }
+
 }
