@@ -109,4 +109,16 @@ class MainActivity : AppCompatActivity() {
         isNewOp = true
     }
 
+    fun butPercent(view:View){
+        val number = etShowValue.text.toString().toDouble()
+
+        etShowValue.setText((number / 100).toString())
+        isNewOp = true
+    }
+
+    fun butClean(view:View){
+        etShowValue.setText("0")
+        isNewOp = true
+    }
+
 }

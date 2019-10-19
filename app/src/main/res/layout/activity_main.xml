@@ -33,13 +33,13 @@
             android:layout_height="match_parent">
 
             <Button
-                android:layout_marginRight="1pt"
                 android:id="@+id/butAC"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
+                android:layout_marginRight="1pt"
                 android:layout_weight="1"
                 android:background="@color/whiteBack"
-                android:onClick="butNumberEvent"
+                android:onClick="butClean"
                 android:text="AC"
                 android:textSize="18sp" />
 
@@ -55,13 +55,13 @@
                 android:textSize="18sp" />
 
             <Button
-                android:layout_marginRight="1pt"
                 android:id="@+id/butPercent"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
+                android:layout_marginRight="1pt"
                 android:layout_weight="1"
                 android:background="@color/whiteBack"
-                android:onClick="butNumberEvent"
+                android:onClick="butPercent"
                 android:text="%"
                 android:textSize="18sp" />
 
