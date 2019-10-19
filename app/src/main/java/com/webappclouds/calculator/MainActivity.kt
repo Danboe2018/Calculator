@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
     var oldNumber = ""
     var isNewOp = true
 
-    fun buOpEvent(view: View){
+    fun butOpEvent(view: View){
 
         val butSelect = view as Button
         var butClickValue:String=etShowValue.text.toString()
